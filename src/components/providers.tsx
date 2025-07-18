@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
 import {
-    ThemeProvider,
-    CssBaseline,
     createTheme,
+    CssBaseline,
     StyledEngineProvider,
+    ThemeProvider,
 } from "@mui/material";
+import React from "react";
 
 /* ——— Tema MUI centralizado ——— */
 const theme = createTheme({
