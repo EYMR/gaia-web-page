@@ -1,84 +1,142 @@
-import PageLayout from "@/components/page-layout"
-import {Leaf, Heart, Users, Award} from "lucide-react"
+import {Box, Button, Card, CardContent, Container, Typography} from "@mui/material";
+import {Award, Heart, Leaf, Users} from "lucide-react";
+
+import PageLayout from "@/components/page-layout";
 
 export default function Home() {
     return (
         <PageLayout>
-            {/* Hero Section */}
-            <section className="text-center py-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg mb-12">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            {/* ---------- HERO ---------- */}
+            <Box
+                component="section"
+                className="py-20 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg mb-16"
+            >
+                <Container maxWidth="lg" className="text-center">
+                    <Typography
+                        component="h1"
+                        variant="h2"
+                        fontWeight={700}
+                        className="mb-4"
+                    >
                         Medicina Tradicional
-                        <span className="text-green-600 block">Natural y Holística</span>
-                    </h1>
-                    <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Descubre el poder curativo de la naturaleza con nuestros tratamientos tradicionales respaldados
-                        por siglos
-                        de sabiduría ancestral.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                        <span className="block text-green-600">Natural y Holística</span>
+                    </Typography>
+
+                    <Typography
+                        variant="h6"
+                        color="text.secondary"
+                        className="mb-10 max-w-2xl mx-auto "
+                    >
+                        Descubre el poder curativo de la naturaleza con nuestros tratamientos
+                        respaldados por siglos de sabiduría ancestral.
+                    </Typography>
+
+                    <Box className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            href="https://wa.me/524422799328?text=Hola%20quiero%20una%20consulta%20gratuita"
+                        >
                             Consulta Gratuita
-                        </button>
-                        <button
-                            className="border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                        </Button>
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            size="large"
+                            href="/consultas"
+                        >
                             Conocer Más
-                        </button>
+                        </Button>
+                    </Box>
+                </Container>
+            </Box>
+
+            {/* ---------- FEATURES ---------- */}
+            <Box component="section" className="py-20">
+                <Container maxWidth="lg">
+                    <Typography
+                        component="h2"
+                        variant="h4"
+                        fontWeight={700}
+                        align="center"
+                        className="mb-4"
+                    >
+                        ¿Por qué elegir Gaia?
+                    </Typography>
+                    <Typography
+                        align="center"
+                        color="text.secondary"
+                        className="mb-12 max-w-2xl mx-auto"
+                    >
+                        Combinamos la sabiduría ancestral con enfoques modernos para
+                        ofrecerte el mejor cuidado integral de tu salud.
+                    </Typography>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                icon: Leaf,
+                                title: "100% Natural",
+                                desc: "Tratamientos con ingredientes naturales sin efectos secundarios.",
+                            },
+                            {
+                                icon: Heart,
+                                title: "Cuidado Integral",
+                                desc: "Enfoque holístico que trata la causa raíz, no solo los síntomas.",
+                            },
+                            {
+                                icon: Users,
+                                title: "Experiencia",
+                                desc: "Más de 15 años ayudando a personas a recuperar su bienestar.",
+                            },
+                            {
+                                icon: Award,
+                                title: "Certificado",
+                                desc: "Profesionales certificados en medicina tradicional y alternativa.",
+                            },
+                        ].map(({icon: Icon, title, desc}) => (
+                            <Card
+                                key={title}
+                                elevation={1}
+                                className="text-center p-6 bg-white shadow-sm"
+                            >
+                                <Icon className="h-12 w-12 text-green-600 mx-auto mb-4"/>
+                                <CardContent>
+                                    <Typography variant="h6" fontWeight={600} className="mb-2">
+                                        {title}
+                                    </Typography>
+                                    <Typography color="text.secondary">{desc}</Typography>
+                                </CardContent>
+                            </Card>
+                        ))}
                     </div>
-                </div>
-            </section>
+                </Container>
+            </Box>
 
-            {/* Features Section */}
-            <section className="py-16">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">¿Por qué elegir Gaia?</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
-                        Combinamos la sabiduría ancestral con enfoques modernos para ofrecerte el mejor cuidado integral
-                        de tu
-                        salud.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <Leaf className="h-12 w-12 text-green-600 mx-auto mb-4"/>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">100% Natural</h3>
-                        <p className="text-gray-600">Tratamientos con ingredientes naturales sin efectos
-                            secundarios.</p>
-                    </div>
-
-                    <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <Heart className="h-12 w-12 text-green-600 mx-auto mb-4"/>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Cuidado Integral</h3>
-                        <p className="text-gray-600">Enfoque holístico que trata la causa raíz, no solo los
-                            síntomas.</p>
-                    </div>
-
-                    <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <Users className="h-12 w-12 text-green-600 mx-auto mb-4"/>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Experiencia</h3>
-                        <p className="text-gray-600">Más de 15 años ayudando a personas a recuperar su bienestar.</p>
-                    </div>
-
-                    <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <Award className="h-12 w-12 text-green-600 mx-auto mb-4"/>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">Certificado</h3>
-                        <p className="text-gray-600">Profesionales certificados en medicina tradicional y
-                            alternativa.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-16 bg-green-600 rounded-lg text-white text-center">
-                <h2 className="text-3xl font-bold mb-4">Comienza tu camino hacia el bienestar</h2>
-                <p className="text-xl mb-8 opacity-90">Agenda tu consulta gratuita y descubre cómo podemos ayudarte.</p>
-                <button
-                    className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                    Agendar Consulta
-                </button>
-            </section>
+            {/* ---------- CTA FINAL ---------- */}
+            <Box component="section" className="py-20 bg-green-600 text-white text-center rounded-lg">
+                <Container maxWidth="md">
+                    <Typography variant="h4" fontWeight={700} className="mb-4">
+                        Comienza tu camino hacia el bienestar
+                    </Typography>
+                    <Typography variant="h6" className="mb-10 opacity-90">
+                        Agenda tu consulta gratuita y descubre cómo podemos ayudarte.
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        size="large"
+                        sx={{
+                            bgcolor: "white",
+                            color: "primary.main",
+                            "&:hover": {bgcolor: "grey.100"},
+                        }}
+                        href="/agenda"
+                    >
+                        Agendar Consulta
+                    </Button>
+                </Container>
+            </Box>
         </PageLayout>
-    )
+    );
 }
