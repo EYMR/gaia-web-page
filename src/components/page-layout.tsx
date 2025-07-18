@@ -22,8 +22,8 @@ export default function PageLayout({children, title}: PageLayoutProps) {
                 )}
                 {children}
             </main>
-            <Footer/>
             <WhatsAppButton/>
+            <Footer/>
         </div>
     )
 }

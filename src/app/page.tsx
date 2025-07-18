@@ -141,12 +141,12 @@ export default function Home() {
                             {
                                 icon: Users,
                                 title: "Experiencia",
-                                desc: "Más de 15 años ayudando a personas a recuperar su bienestar.",
+                                desc: "Más de 10 años ayudando a personas a recuperar su bienestar.",
                             },
                             {
                                 icon: Award,
                                 title: "Certificado",
-                                desc: "Profesionales certificados en medicina tradicional y alternativa.",
+                                desc: "Profesional certificada en medicina tradicional y terapias alternativas.",
                             },
                         ].map(({icon: Icon, title, desc}) => (
                             <Card

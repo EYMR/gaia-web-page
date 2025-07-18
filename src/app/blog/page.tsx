@@ -1,5 +1,6 @@
+import {ArrowRight, Calendar, User} from "lucide-react"
+
 import PageLayout from "@/components/page-layout"
-import {Calendar, User, ArrowRight} from "lucide-react"
 
 const blogPosts = [
     {
