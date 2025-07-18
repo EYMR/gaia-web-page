@@ -1,5 +1,6 @@
+import {Award, Heart, Leaf, Users} from "lucide-react"
+
 import PageLayout from "@/components/page-layout"
-import {Users, Award, Heart, Leaf} from "lucide-react"
 
 export default function About() {
     return (

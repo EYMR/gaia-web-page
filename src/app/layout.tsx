@@ -4,9 +4,9 @@ import type {ReactNode} from "react";
 import {Geist, Geist_Mono} from "next/font/google";
 
 import "./globals.css";     // Make sure you import the global CSS
-import Footer from "@/components/footer";
+
 import Providers from "@/components/providers";
-import WhatsAppButton from "@/components/whatsapp-button";
+
 
 /* Fonts */
 const geistSans = Geist({
@@ -31,8 +31,7 @@ export default function RootLayout({children}: { children: ReactNode }) {
             suppressHydrationWarning // Add this prop to suppress the warning
         >
         <Providers>{children}</Providers>
-        <Footer/>
-        <WhatsAppButton/>
+
         </body>
         </html>
     );
