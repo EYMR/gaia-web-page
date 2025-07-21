@@ -51,10 +51,8 @@ export default function Services() {
                                             </p>
                                         </div>
                                     </div>
-
                                     {/* Descripción */}
                                     <p className="text-gray-600 mb-6">{s.description}</p>
-
                                     <ul className="mb-4 space-y-2">
                                         {s.features.map((f) => (
                                             <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
@@ -76,14 +74,10 @@ export default function Services() {
 
                                     {/* CTA */}
                                     <a
-                                        href={`https://wa.me/524422799328?text=${encodeURIComponent(
-                                            `Hola, quiero agendar ${s.name} – ${s.modality}.`
-                                        )}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href={`/calendar?service=${s.id}`}
                                         className="mt-auto w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center"
                                     >
-                                        Agendar Consulta
+                                        Reservar
                                     </a>
                                 </div>
                             );

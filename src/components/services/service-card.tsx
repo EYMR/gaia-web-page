@@ -1,49 +1,53 @@
 "use client";
 
-import HealingIcon from "@mui/icons-material/Healing";
-import {Button, Card, CardActions, CardContent, Chip, Typography} from "@mui/material";
+import {Check} from "lucide-react";
 
+import {Button} from "@/components/ui/button";
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {Service} from "@/data/services";
 
-export default function ServiceCard({s}: { s: Service }) {
-    const waMsg = encodeURIComponent(
-        `Hola, quiero agendar ${s.name} (${s.modality}) — ${s.duration}, $${s.price} MXN`
-    );
-    const waLink = `https://wa.me/524422799328?text=${waMsg}`;
+type Props = { service: Service };
 
+export default function ServiceCard({service}: Props) {
     return (
-        <Card elevation={2} className="flex flex-col">
-            <CardContent className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                    <HealingIcon color="primary"/>
-                    <Typography variant="h6" fontWeight={600}>
-                        {s.name}
-                    </Typography>
+        <Card className="flex flex-col">
+            <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                    {service.name}
+                </CardTitle>
+                <CardDescription className="text-green-600 font-semibold">
+                    ${service.price} MXN
+                </CardDescription>
+            </CardHeader>
+
+            <CardContent className="flex-1 flex flex-col gap-4">
+                <p className="text-gray-700">{service.description}</p>
+
+                <ul className="space-y-2">
+                    {service.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
+                            <Check className="w-4 h-4 text-green-600"/>
+                            {f}
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="flex gap-2">
+          <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs">
+            {service.duration}
+          </span>
+                    <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs">
+            {service.modality}
+          </span>
                 </div>
 
-                <Typography variant="body2" color="text.secondary" className="mb-4">
-                    {s.description}
-                </Typography>
-
-                <div className="flex gap-2 mb-2">
-                    <Chip label={s.duration} size="small"/>
-                    <Chip label={`$${s.price} MXN`} color="success" size="small"/>
-                </div>
-                <Chip label={s.modality} size="small" variant="outlined"/>
-            </CardContent>
-
-            <CardActions className="pt-0">
                 <Button
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                    href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    asChild
+                    className="mt-auto w-full"
                 >
-                    Reservar por WhatsApp
+                    <a href={`/calendar?service=${service.id}`}>Reservar</a>
                 </Button>
-            </CardActions>
+            </CardContent>
         </Card>
     );
 }

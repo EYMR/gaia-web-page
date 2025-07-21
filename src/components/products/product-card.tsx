@@ -28,7 +28,7 @@ export default function ProductCard({p}: { p: Product }) {
                 </Typography>
                 {p.sendable && (
                     <Typography variant="caption" color="text.secondary" className="flex items-center gap-1 mt-1">
-                        <LocalShippingIcon fontSize="inherit"/> Envío disponible
+                        <LocalShippingIcon fontSize="inherit"/> Envío incluido
                     </Typography>
                 )}
             </CardContent>

@@ -1,6 +1,7 @@
 import type React from "react"
 
 import Footer from "@/components/footer";
+import {Toaster} from "@/components/ui/toaster";
 import WhatsAppButton from "@/components/whatsapp-button";
 
 import Navigation from "./navigation"
@@ -21,6 +22,7 @@ export default function PageLayout({children, title}: PageLayoutProps) {
                     </div>
                 )}
                 {children}
+                <Toaster/>
             </main>
             <WhatsAppButton/>
             <Footer/>
