@@ -1,7 +1,57 @@
+"use client";
+
+import {Clock, Mail, MapPin, Phone} from "lucide-react"
+import React, {useState} from "react";
+
 import PageLayout from "@/components/page-layout"
-import {MapPin, Phone, Mail, Clock} from "lucide-react"
 
 export default function Contact() {
+    const [form, setForm] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+    });
+
+    // Human‑readable names for the "service" select values
+    const serviceNameMap: Record<string, string> = {
+        general: "Consulta General",
+        acupuntura: "Acupuntura",
+        otro: "Otro",
+    };
+
+    const handleChange = (field: keyof typeof form) => (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => setForm({...form, [field]: e.target.value});
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const {
+            firstName,
+            lastName,
+            email,
+            phone,
+            service,
+            message,
+        } = form;
+
+        const chosenService = (serviceNameMap[service] ?? service) || "N/D";
+
+        const plain = [
+            `Hola, soy ${firstName} ${lastName}.`,
+            `Correo: ${email}`,
+            `Teléfono: ${phone}`,
+            `Servicio de interés: ${chosenService}`,
+            `Mensaje: ${message}`,
+        ].join("\n");
+
+        const text = encodeURIComponent(plain);
+
+        window.open(`https://wa.me/524422799328?text=${text}`, "_blank");
+    };
+
     return (
         <PageLayout title="Contacto">
             <div className="max-w-6xl mx-auto">
@@ -18,9 +68,9 @@ export default function Contact() {
                                     <div>
                                         <h3 className="font-semibold text-gray-900 mb-1">Dirección</h3>
                                         <p className="text-gray-600">
-                                            Av. Revolución 1234, Col. Centro
+                                            Callejón de la Saca 94
                                             <br/>
-                                            Ciudad de México, CDMX 06000
+                                            Querétaro, Corregidora, 76900
                                             <br/>
                                             México
                                         </p>
@@ -32,9 +82,7 @@ export default function Contact() {
                                     <div>
                                         <h3 className="font-semibold text-gray-900 mb-1">Teléfono</h3>
                                         <p className="text-gray-600">
-                                            +52 55 1234 5678
-                                            <br/>
-                                            +52 55 8765 4321
+                                            +52 442 279 9328
                                         </p>
                                     </div>
                                 </div>
@@ -44,9 +92,7 @@ export default function Contact() {
                                     <div>
                                         <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                                         <p className="text-gray-600">
-                                            info@gaiamedicina.com
-                                            <br/>
-                                            consultas@gaiamedicina.com
+                                            gaiamedicotradicional@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -56,8 +102,8 @@ export default function Contact() {
                                     <div>
                                         <h3 className="font-semibold text-gray-900 mb-1">Horarios</h3>
                                         <div className="text-gray-600 space-y-1">
-                                            <p>Lunes - Viernes: 9:00 AM - 7:00 PM</p>
-                                            <p>Sábados: 9:00 AM - 2:00 PM</p>
+                                            <p>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                                            <p>Sábados: 11:00 AM - 2:00 PM</p>
                                             <p>Domingos: Cerrado</p>
                                         </div>
                                     </div>
@@ -69,7 +115,7 @@ export default function Contact() {
                         <div className="bg-white rounded-lg p-8 shadow-sm">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">Envíanos un Mensaje</h2>
 
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <div>
                                         <label htmlFor="firstName"
@@ -81,6 +127,8 @@ export default function Contact() {
                                             id="firstName"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                             placeholder="Tu nombre"
+                                            value={form.firstName}
+                                            onChange={handleChange("firstName")}
                                         />
                                     </div>
                                     <div>
@@ -93,6 +141,8 @@ export default function Contact() {
                                             id="lastName"
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                             placeholder="Tu apellido"
+                                            value={form.lastName}
+                                            onChange={handleChange("lastName")}
                                         />
                                     </div>
                                 </div>
@@ -106,6 +156,8 @@ export default function Contact() {
                                         id="email"
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                         placeholder="tu@email.com"
+                                        value={form.email}
+                                        onChange={handleChange("email")}
                                     />
                                 </div>
 
@@ -118,6 +170,8 @@ export default function Contact() {
                                         id="phone"
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                         placeholder="+52 55 1234 5678"
+                                        value={form.phone}
+                                        onChange={handleChange("phone")}
                                     />
                                 </div>
 
@@ -128,13 +182,13 @@ export default function Contact() {
                                     <select
                                         id="service"
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                        value={form.service}
+                                        onChange={handleChange("service")}
                                     >
                                         <option value="">Selecciona un servicio</option>
-                                        <option value="fitoterapia">Fitoterapia</option>
-                                        <option value="ayurveda">Medicina Ayurvédica</option>
-                                        <option value="neural">Terapia Neural</option>
+                                        <option value="general">Consulta General</option>
                                         <option value="acupuntura">Acupuntura</option>
-                                        <option value="consulta">Consulta General</option>
+                                        <option value="otro">Otro</option>
                                     </select>
                                 </div>
 
@@ -147,6 +201,8 @@ export default function Contact() {
                                         rows={4}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                         placeholder="Cuéntanos sobre tu consulta o pregunta..."
+                                        value={form.message}
+                                        onChange={handleChange("message")}
                                     ></textarea>
                                 </div>
 
@@ -154,41 +210,9 @@ export default function Contact() {
                                     type="submit"
                                     className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                                 >
-                                    Enviar Mensaje
+                                    Enviar por WhatsApp
                                 </button>
                             </form>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Map Section */}
-                <section className="mb-12">
-                    <div className="bg-white rounded-lg p-8 shadow-sm">
-                        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Nuestra Ubicación</h2>
-                        <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                            <p className="text-gray-600">[Aquí iría el mapa interactivo de Google Maps]</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Emergency Contact */}
-                <section>
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                        <h3 className="text-lg font-bold text-red-800 mb-2">Consultas de Emergencia</h3>
-                        <p className="text-red-700 mb-4">
-                            Para consultas urgentes fuera del horario de atención, puedes contactarnos a través de
-                            WhatsApp o llamar a
-                            nuestro número de emergencias.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button
-                                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                                WhatsApp: +52 55 9999 8888
-                            </button>
-                            <button
-                                className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-                                Emergencias: +52 55 7777 6666
-                            </button>
                         </div>
                     </div>
                 </section>

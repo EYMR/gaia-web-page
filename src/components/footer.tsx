@@ -13,9 +13,8 @@ export default function Footer() {
                 <Box className="flex justify-center gap-6">
                     {[
                         {href: "/products", label: "Productos"},
-                        {href: "/consultas", label: "Consultas"},
-                        {href: "/agenda", label: "Agenda"},
-                        {href: "/contacto", label: "Contacto"},
+                        {href: "/calendar", label: "Consultas"},
+                        {href: "/contact", label: "Contacto"},
                     ].map(({href, label}) => (
                         <MuiLink
                             key={href}
