@@ -15,6 +15,7 @@ export default function Footer() {
                         {href: "/products", label: "Productos"},
                         {href: "/calendar", label: "Consultas"},
                         {href: "/contact", label: "Contacto"},
+                        {href: "/faq", label: "Aviso de Privacidad"}
                     ].map(({href, label}) => (
                         <MuiLink
                             key={href}
