@@ -67,7 +67,7 @@ export default function Home() {
                             >
                                 Contáctanos por WhatsApp
                             </Button>
-                            <Button variant="outlined" color="primary" size="large" href="/consultas">
+                            <Button variant="outlined" color="primary" size="large" href="/treatments">
                                 Conocer Más
                             </Button>
                         </Box>

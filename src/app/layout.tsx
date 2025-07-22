@@ -3,10 +3,8 @@ import type {ReactNode} from "react";
 
 import {Geist, Geist_Mono} from "next/font/google";
 
-import "./globals.css";     // Make sure you import the global CSS
-
-import Providers from "@/components/providers";
-
+import "./globals.css";
+import ThemeRegistry from "@/components/theme-registry";
 
 /* Fonts */
 const geistSans = Geist({
@@ -28,10 +26,8 @@ export default function RootLayout({children}: { children: ReactNode }) {
         <html lang="es">
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
-            suppressHydrationWarning // Add this prop to suppress the warning
         >
-        <Providers>{children}</Providers>
-
+        <ThemeRegistry>{children}</ThemeRegistry>
         </body>
         </html>
     );
