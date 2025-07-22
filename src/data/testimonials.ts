@@ -51,7 +51,7 @@ export const testimonials: Testimonials[] = [
         rating: 5,
         date: "Diciembre 2023",
         type: "image",
-        image: "/placeholder.svg?height=300&width=400",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffbtestimonial.jpeg",
         quote:
             "20 años de dolor constante se convirtieron en libertad total. Ahora puedo jugar fútbol con mis hijos sin limitaciones.",
         fullStory:

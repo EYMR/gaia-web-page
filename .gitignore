@@ -31,7 +31,12 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env
+
+# Firebase
+firebase.js
+gaia-service-account.json
+scripts/upload-admin.ts
+scripts/upload.ts
 
 
 # vercel
