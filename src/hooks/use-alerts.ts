@@ -16,6 +16,10 @@ export interface AlertItem {
 export function useAlerts() {
     const [alerts, setAlerts] = useState<AlertItem[]>([])
 
+    const removeAlert = useCallback((id: string) => {
+        setAlerts((prev) => prev.filter((alert) => alert.id !== id))
+    }, [])
+
     const addAlert = useCallback((alert: Omit<AlertItem, "id">) => {
         const id = Math.random().toString(36).substr(2, 9)
         const newAlert = {...alert, id}
@@ -30,11 +34,7 @@ export function useAlerts() {
         }
 
         return id
-    }, [])
-
-    const removeAlert = useCallback((id: string) => {
-        setAlerts((prev) => prev.filter((alert) => alert.id !== id))
-    }, [])
+    }, [removeAlert])
 
     const clearAlerts = useCallback(() => {
         setAlerts([])
