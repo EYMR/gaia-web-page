@@ -8,6 +8,8 @@ import type {NextConfig} from "next";
  * If you change project or bucket name, update `pathname`.
  */
 const nextConfig: NextConfig = {
+    output: "export",
+    trailingSlash: false,
     images: {
         remotePatterns: [
             {
