@@ -99,7 +99,7 @@ export default function About() {
                     <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8">
                         <h2 className="text-2xl font-bold text-gray-900 mb-6">Nuestra Historia</h2>
                         <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                            Gaia Medico Tradicional nació en 2008 con la visión de crear un espacio donde las personas
+                            Gaia Medico Tradicional nació en 2015 con la visión de crear un espacio donde las personas
                             pudieran
                             acceder a tratamientos naturales efectivos y seguros. Comenzamos como una pequeña consulta y
                             hemos crecido

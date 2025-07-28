@@ -60,7 +60,7 @@ export const products: Product[] = [
     },
 
     /* —— Goteros —— */
-    {id: "got-leafc", name: "Lechero Africanp", category: "Goteros", size: "55 ml", price: 180, sendable: true},
+    {id: "got-leafc", name: "Lechero Africano", category: "Goteros", size: "55 ml", price: 180, sendable: true},
     {id: "got-klnc", name: "Kalanchoe", category: "Goteros", size: "55 ml", price: 180, sendable: true},
     {id: "got-dtx", name: "Detox", category: "Goteros", size: "55 ml", price: 180, sendable: true},
     {id: "got-dlr", name: "Dolor", category: "Goteros", size: "55 ml", price: 180, sendable: true},

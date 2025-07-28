@@ -1,74 +1,8 @@
-import PageLayout from "@/components/page-layout"
-import {Clock, Users, CheckCircle} from "lucide-react"
+import {CheckCircle, Clock} from "lucide-react"
 
-const treatments = [
-    {
-        category: "Digestivos",
-        conditions: [
-            "Gastritis crónica",
-            "Síndrome de intestino irritable",
-            "Colitis ulcerosa",
-            "Reflujo gastroesofágico",
-            "Estreñimiento crónico",
-        ],
-        duration: "4-8 semanas",
-        success: "85%",
-    },
-    {
-        category: "Respiratorios",
-        conditions: [
-            "Asma bronquial",
-            "Bronquitis crónica",
-            "Sinusitis recurrente",
-            "Alergias respiratorias",
-            "Rinitis alérgica",
-        ],
-        duration: "6-12 semanas",
-        success: "78%",
-    },
-    {
-        category: "Musculoesqueléticos",
-        conditions: [
-            "Artritis reumatoide",
-            "Fibromialgia",
-            "Dolor lumbar crónico",
-            "Artritis degenerativa",
-            "Tendinitis recurrente",
-        ],
-        duration: "8-16 semanas",
-        success: "82%",
-    },
-    {
-        category: "Neurológicos",
-        conditions: [
-            "Migrañas crónicas",
-            "Ansiedad generalizada",
-            "Insomnio crónico",
-            "Depresión leve-moderada",
-            "Estrés crónico",
-        ],
-        duration: "6-12 semanas",
-        success: "80%",
-    },
-    {
-        category: "Endocrinos",
-        conditions: [
-            "Diabetes tipo 2",
-            "Hipotiroidismo",
-            "Síndrome metabólico",
-            "Resistencia a la insulina",
-            "Desequilibrios hormonales",
-        ],
-        duration: "12-24 semanas",
-        success: "75%",
-    },
-    {
-        category: "Dermatológicos",
-        conditions: ["Psoriasis", "Eczema crónico", "Dermatitis atópica", "Acné persistente", "Vitiligo"],
-        duration: "8-16 semanas",
-        success: "70%",
-    },
-]
+import PageLayout from "@/components/page-layout"
+import {treatments} from "@/data/treatments";
+
 
 export default function Treatments() {
     return (
@@ -85,6 +19,10 @@ export default function Treatments() {
                             específicas del
                             paciente.
                         </p>
+                        <p className="text-gray-600 text-lg text-center max-w-4xl mx-auto">
+                            (Esto no es un diagnóstico médico, ni un medicamento, consulta a tu médico de cabecera)
+                        </p>
+
                     </div>
                 </section>
 
@@ -117,15 +55,6 @@ export default function Treatments() {
                                         </div>
                                         <span
                                             className="text-sm font-semibold text-gray-900">{treatment.duration}</span>
-                                    </div>
-
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center text-gray-600">
-                                            <Users className="h-4 w-4 mr-2"/>
-                                            <span className="text-sm">Tasa de éxito</span>
-                                        </div>
-                                        <span
-                                            className="text-sm font-semibold text-green-600">{treatment.success}</span>
                                     </div>
                                 </div>
                             </div>
@@ -186,10 +115,15 @@ export default function Treatments() {
                             Contáctanos para una consulta personalizada. Tratamos muchas otras condiciones con medicina
                             tradicional.
                         </p>
-                        <button
-                            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Consulta Gratuita
-                        </button>
+                        <a
+                            href="/contact"
+                        >
+                            <button
+
+                                className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                                Consulta Gratuita
+                            </button>
+                        </a>
                     </div>
                 </section>
             </div>
