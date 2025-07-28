@@ -9,20 +9,21 @@ import path from "node:path";
 initializeApp({
     credential: cert(path.join(process.cwd(), "gaia-service-account.json")),
     storageBucket: "gaia-web-a0afb.firebasestorage.app",
+    /*storageBucket: "gaia-web-a0afb.appspot.com"*/
 });
 
 const bucket = getStorage().bucket();
 
 /* ---------- Subida ---------- */
 (async () => {
-    const localPath = "./public/fbtestimonial.jpeg"; // archivo local de prueba
-
-    const destPath = "public/fbtestimonial.jpeg"; // destino en el bucket
+    const localPath = "./public/fb7.jpeg"; // archivo local de prueba
+    const destPath = "public/fb7.jpeg"; // destino en el bucket
 
     const file = bucket.file(destPath);
 
     await file.save(readFileSync(localPath), {
         metadata: {contentType: "image/jpeg"},
+        /* metadata: {contentType: "video/mp4"},*/
         public: true, // hace el objeto readable sin token
     });
 

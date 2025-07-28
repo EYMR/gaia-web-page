@@ -1,181 +1,205 @@
 export type Testimonials = {
     id: number;
     name: string;
-    age: number;
+    age?: number;
     location: string;
-    condition: string;
+    condition?: string;
     category: string;
     treatment: string;
-    duration: string;
+    duration?: string;
     rating: number;
     date: string;
     type: string;
     thumbnail?: string;
-    quote: string;
-    fullStory: string;
+    quote?: string;
+    fullStory?: string;
     results: string[];
     videoUrl?: string;
     image?: string;
 };
 
 export const testimonials: Testimonials[] = [
+    /*********************
+     *
+     *
+     *  Social Media Testimonials
+     *
+     *
+     *
+     *
+     *
+     ***************************/
     {
+
         id: 1,
-        name: "María González",
-        age: 34,
-        location: "Querétaro, QRO",
-        condition: "Ansiedad Generalizada",
-        category: "anxiety",
-        treatment: "Acupuntura + Fitoterapia",
+        name: "Zafiro de los Mercedes",
+        location: "Querétaro",
+        category: "social",
+        treatment: "Tratamiento Integral",
         duration: "3 meses",
         rating: 5,
         date: "Enero 2024",
-        type: "video",
+        type: "image",
         thumbnail: "/placeholder.svg?height=300&width=400",
         quote:
             "Después de años luchando con ansiedad, finalmente encontré paz. La combinación de acupuntura y plantas medicinales cambió mi vida completamente.",
         fullStory:
             "Llegué a Gaia después de probar múltiples tratamientos convencionales sin éxito. Mi ansiedad era tan severa que no podía salir de casa. Después de 3 meses de tratamiento integral, no solo recuperé mi vida social, sino que también aprendí técnicas para manejar el estrés de manera natural.",
         results: ["Reducción del 90% en ataques de pánico", "Mejor calidad de sueño", "Regreso a actividades sociales"],
-        videoUrl: "#",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffbtestimonial.jpeg",
     },
     {
         id: 2,
-        name: "Carlos Mendoza",
+        name: "José Ismael Molina",
         age: 45,
-        location: "San Luis Potosí, SLP",
-        condition: "Dolor Lumbar Crónico",
+        location: "",
+        condition: "Cáncer",
         category: "pain",
-        treatment: "Terapia Neural + Acupuntura",
-        duration: "4 meses",
+        treatment: "Tratamiento Nutritivo",
+        duration: "",
         rating: 5,
         date: "Diciembre 2023",
-        type: "image",
-        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffbtestimonial.jpeg",
+        type: "video",
+        videoUrl: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ftest1.mp4",
         quote:
-            "20 años de dolor constante se convirtieron en libertad total. Ahora puedo jugar fútbol con mis hijos sin limitaciones.",
-        fullStory:
-            "El dolor lumbar me tenía postrado. Había probado cirugías, medicamentos fuertes y fisioterapia tradicional. La terapia neural fue reveladora - liberó tensiones que tenía desde un accidente hace décadas. Combinada con acupuntura, el resultado fue extraordinario.",
+            "José Ismael fue diagnosticado con cáncer, recibió 7 quimioterapias durante un año. Al segundo año fue diagnosticado nuevamente y los doctores lo enviaron desahuciado.",
+        fullStory: "Después de su diagnostico recibió 7 quimioterapias durante un año, al finalizar su tratamiento alópata, José Ismael asiste a revisión constante durante 6 ó 7 meses. Al siguiente año recibe noticias de que la enfermedad había regresado. Esta vez se le aplicaron quimioterapias más agresivas, después del tratamiento se le siguen haciendo estudios. Al final las noticias son desalentadoras, sus doctores lo enviaron desahuciado",
         results: ["Eliminación completa del dolor crónico", "Recuperación de movilidad total", "Suspensión de analgésicos"],
     },
     {
         id: 3,
-        name: "Ana Sofía Ruiz",
-        age: 28,
-        location: "Guadalajara, JAL",
-        condition: "Síndrome de Intestino Irritable",
-        category: "digestive",
-        treatment: "Medicina Ayurvédica + Fitoterapia",
-        duration: "6 meses",
+        name: "Magali vía Facebook",
+        location: "",
+        condition: "Cáncer",
+        category: "social",
+        treatment: "Tratamiento Integral",
+        duration: "1 mes",
         rating: 5,
-        date: "Noviembre 2023",
-        type: "video",
+        date: "2025",
+        type: "image",
         thumbnail: "/placeholder.svg?height=300&width=400",
-        quote:
-            "Mi sistema digestivo era un caos. Ahora disfruto cada comida sin miedo ni dolor. La medicina ayurvédica me enseñó a escuchar mi cuerpo.",
+        quote: "Estoy acabando mi primer mes de tratamiento, acabo de pedir el segundo, me diagnosticaron cáncer de mama, cuando inicie con el tratamiento tenia mucho dolor ahora ya no tengo.",
         fullStory:
-            "Vivía con dolor abdominal constante, hinchazón y episodios impredecibles que arruinaban mis planes. El enfoque ayurvédico no solo trató mis síntomas, sino que me ayudó a entender mi constitución única y cómo alimentarme correctamente.",
-        results: ["Digestión normal y sin dolor", "Identificación de alimentos adecuados", "Mejor relación con la comida"],
-        videoUrl: "#",
+            "Estoy acabando mi primer mes de tratamiento, acabo de pedir el segundo, me diagnosticaron cáncer de mama, cuando inicie con el tratamiento tenia mucho dolor ahora ya no tengo.",
+        results: ["Disminución del dolor"],
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Fmagali.jpeg",
     },
     {
         id: 4,
-        name: "Roberto Jiménez",
-        age: 52,
-        location: "Monterrey, NL",
-        condition: "Insomnio Crónico",
-        category: "sleep",
-        treatment: "Acupuntura + Medicina Herbal",
-        duration: "2 meses",
+        name: "Cliente vía WhatsApp",
+        location: "México",
+        condition: "Inflamación",
+        category: "digestive",
+        treatment: "Tratamiento Digestivo",
+        duration: "1 mes",
         rating: 5,
-        date: "Octubre 2023",
+        date: "2025",
         type: "image",
-        image: "/placeholder.svg?height=300&width=400",
+        thumbnail: "/placeholder.svg?height=300&width=400",
         quote:
-            "Después de 5 años sin dormir bien, ahora duermo 8 horas seguidas. Mi energía y concentración regresaron completamente.",
+            "Después de 1 mes de tratamiento me siento muy desinflamada de mi vientre y el pólipo que tengo se redujo de tamaño",
         fullStory:
-            "El estrés laboral me había robado el sueño. Probé pastillas para dormir que me dejaban aturdido al día siguiente. La acupuntura reguló mi sistema nervioso y las hierbas me ayudaron a relajarme naturalmente sin efectos secundarios.",
-        results: ["8 horas de sueño reparador", "Mayor energía durante el día", "Mejor concentración en el trabajo"],
+            "",
+        results: ["Vientre desinflamado", "Pólipo reducido de tamaño"],
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb1.jpeg"
     },
     {
         id: 5,
-        name: "Lucía Hernández",
-        age: 38,
-        location: "Puebla, PUE",
-        condition: "Desequilibrio Hormonal",
-        category: "hormonal",
-        treatment: "Fitoterapia + Medicina Tradicional",
-        duration: "5 meses",
+        name: "Flor vía Facebook",
+        location: "México",
+        category: "social",
+        treatment: "Tratamiento Integral",
+        duration: "1 mes",
         rating: 5,
-        date: "Septiembre 2023",
-        type: "video",
+        date: "2025",
+        type: "image",
         thumbnail: "/placeholder.svg?height=300&width=400",
         quote:
-            "Mis ciclos irregulares y cambios de humor extremos se regularon naturalmente. Me siento como una nueva persona.",
-        fullStory:
-            "Los desequilibrios hormonales controlaban mi vida - ciclos impredecibles, cambios de humor severos y fatiga constante. Las plantas medicinales mexicanas trabajaron en armonía con mi cuerpo para restaurar el equilibrio natural sin hormonas sintéticas.",
-        results: ["Ciclos menstruales regulares", "Estado de ánimo estable", "Niveles de energía consistentes"],
-        videoUrl: "#",
+            "Consulté con el doctor familiar, con un biólogo de aquí de mi estado y con un doctor de los que ponen agujas y nunca vi buen resultado con mi problema hasta que tome sus trátamientos, estoy súper recuperada.",
+        results: ["Mejoró el estado de la salud al tomar el tratamiento de Gaia"],
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb2.jpeg"
     },
     {
         id: 6,
-        name: "Diego Morales",
-        age: 41,
-        location: "Tijuana, BC",
-        condition: "Asma Bronquial",
-        category: "respiratory",
-        treatment: "Medicina Herbal + Acupuntura",
-        duration: "4 meses",
+        name: "Cliente vía WhatsApp",
+        location: "México",
+        condition: "Cáncer",
+        category: "chronic",
+        treatment: "Tratamiento Integral",
+        duration: "2 meses",
         rating: 5,
-        date: "Agosto 2023",
+        date: "2025",
         type: "image",
-        image: "/placeholder.svg?height=300&width=400",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb3.jpeg",
         quote:
-            "Mi dependencia del inhalador se redujo 80%. Ahora puedo hacer ejercicio y actividades al aire libre sin limitaciones.",
-        fullStory:
-            "El asma limitaba cada aspecto de mi vida. Los ataques eran frecuentes y severos. La combinación de hierbas expectorantes y acupuntura fortaleció mis pulmones gradualmente. Ahora respiro libremente y mi calidad de vida es incomparable.",
+            "Una paciente de cáncer que se sometió a una cirugía de tumor de mama con un tratamiento previo reporta una recuperación rápida y sin dolor. La herida de 20 cms está limpia y cicatrizada solo 4 días después de la cirugía. La paciente se siente con mucha energía y atribuye su rápida recuperación al tratamiento recibido. Ahora, pregunta si necesitará otro tratamiento después de haber completado el actual.",
         results: [
-            "Reducción significativa de crisis asmáticas",
-            "Menor dependencia de medicamentos",
-            "Capacidad para ejercitarse",
+            "Recuperación sin dolor",
+            "Cicatrización rápida",
+            "Energía y bienestar",
+            "Comparación con experiencias anteriores",
         ],
     },
     {
         id: 7,
-        name: "Patricia Vega",
-        age: 29,
-        location: "Mérida, YUC",
-        condition: "Migrañas Crónicas",
-        category: "pain",
-        treatment: "Acupuntura + Terapia Neural",
-        duration: "3 meses",
+        name: "Cecy Reyes Vía Facebook",
+        location: "México",
+        condition: "Cáncer de mama",
+        category: "chronic",
+        treatment: "Tratamiento Integral",
+        duration: "2 meses",
         rating: 5,
-        date: "Julio 2023",
-        type: "video",
-        thumbnail: "/placeholder.svg?height=300&width=400",
-        quote: "Las migrañas que me incapacitaban 15 días al mes desaparecieron. Recuperé mi carrera y mi vida personal.",
-        fullStory:
-            "Las migrañas eran tan severas que perdí trabajos y oportunidades. Vivía en oscuridad constante. La acupuntura identificó patrones de tensión que desencadenaban las crisis, y la terapia neural liberó bloqueos profundos. Ahora tengo una vida normal y productiva.",
-        results: ["Eliminación de migrañas crónicas", "Regreso a la vida laboral normal", "Mejor calidad de vida familiar"],
-        videoUrl: "#",
+        date: "2025",
+        type: "image",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb4.jpeg",
+        quote: "Una persona con cáncer de mama que ha estado tomando un tratamiento durante 2 meses reporta sentirse muy bien. Ha notado una disminución en los mareos desde que comenzó el tratamiento.",
+        results: ["Mejora en el estado de salud", "Disminución de mareos", "Tratamiento en curso"],
     },
     {
         id: 8,
-        name: "Fernando Castro",
-        age: 36,
-        location: "León, GTO",
-        condition: "Gastritis Crónica",
-        category: "digestive",
-        treatment: "Medicina Ayurvédica + Fitoterapia",
-        duration: "4 meses",
+        name: "Criss Gomez Vía Facebook",
+        location: "México",
+        category: "social",
+        treatment: "Tratamiento Integral",
+        duration: "1 mes",
         rating: 5,
-        date: "Junio 2023",
+        date: "2025",
         type: "image",
-        image: "/placeholder.svg?height=300&width=400",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb5.jpeg",
         quote:
-            "El ardor constante en mi estómago desapareció. Ahora puedo disfrutar comidas familiares sin preocupaciones.",
-        fullStory:
-            "La gastritis me obligaba a seguir una dieta estricta y aun así sufría de acidez y dolor. El enfoque ayurvédico identificó la raíz de mi desequilibrio y, con hierbas específicas, mi sistema digestivo se sanó por completo.",
-        results: ["Eliminación de la gastritis", "Dieta variada sin dolor", "Mejor absorción de nutrientes"],
+            "Una persona que había estado pasando por un momento difícil con su salud expresa gratitud hacia el tratamiento, ya que ha tenido un impacto positivo en su vida. Agradece por haber encontrado este recurso y reporta que, aunque el progreso es lento, está avanzando poco a poco.",
+        results: ["Progreso lento pero seguro"],
     },
+    {
+        id: 9,
+        name: "Julia Hernández Vía Facebook",
+        location: "México",
+        category: "social",
+        treatment: "Tratamiento Integral",
+        duration: "1 mes",
+        rating: 5,
+        date: "2025",
+        type: "image",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb6.jpeg"
+        , quote:
+            "Julia expresa gratitud, porque compró el tratamiento para su hija y cree que este la ayudó muchísimo en sus dos cirugías.",
+        results: ["Beneficio para su hija", "Resultados comprobados"],
+    },
+    {
+        id: 10,
+        name: "Paciente Vía WhatsApp",
+        location: "México",
+        category: "social",
+        treatment: "Tratamiento Integral",
+        duration: "1 mes",
+        rating: 5,
+        date: "2025",
+        type: "image",
+        image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Ffb7.jpeg",
+        quote:
+            "Nuestro cliente que está por terminar su tratamiento pregunta cuánto tiempo debe dejar pasar antes de reiniciar otro tratamiento. También menciona que ha estado sufriendo de colitis nerviosa, pero que se ha sentido muy bien desde que comenzó el tratamiento.",
+        results: ["Mejora en la colitis nerviosa"],
+    },
+
+
 ];
