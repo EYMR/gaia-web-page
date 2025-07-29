@@ -16,13 +16,13 @@ const bucket = getStorage().bucket();
 
 /* ---------- Subida ---------- */
 (async () => {
-    const localPath = "./public/fb7.jpeg"; // archivo local de prueba
-    const destPath = "public/fb7.jpeg"; // destino en el bucket
+    const localPath = "./public/logo.jpg"; // archivo local de prueba
+    const destPath = "public/logo.jpg"; // destino en el bucket
 
     const file = bucket.file(destPath);
 
     await file.save(readFileSync(localPath), {
-        metadata: {contentType: "image/jpeg"},
+        metadata: {contentType: "image/jpg"},
         /* metadata: {contentType: "video/mp4"},*/
         public: true, // hace el objeto readable sin token
     });

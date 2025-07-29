@@ -2,6 +2,7 @@
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
+import Image from "next/image";
 
 import {Product} from "@/data/products";
 
@@ -11,10 +12,21 @@ export default function ProductCard({p}: { p: Product }) {
 
     return (
         <Card elevation={1} className="flex flex-col">
-            {/* Imagen placeholder (puedes reemplazar con <Image>) */}
-            <div className="h-36 bg-green-50 flex items-center justify-center text-green-600">
-                <span className="text-lg font-semibold">{p.category}</span>
-            </div>
+            {p.image ? (
+                <div className="relative h-36">
+                    <Image
+                        src={p.image}
+                        alt={p.name}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            ) : (
+                <div className="h-36 bg-green-50 flex items-center justify-center text-green-600">
+                    <span className="text-lg font-semibold">{p.category}</span>
+                </div>
+            )}
+
 
             <CardContent className="flex-1">
                 <Typography variant="h6" fontWeight={600}>

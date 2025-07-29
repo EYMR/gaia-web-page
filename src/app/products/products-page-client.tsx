@@ -8,8 +8,8 @@ import ProductCard from "@/components/products/product-card";
 import {products} from "@/data/products";
 
 export default function ProductosPageClient() {
-    const [filter, setFilter] = useState<"Todos" | "Paquetes Completos" | "Goteros" | "Tónicos" | "Detox" | "Pomadas" | "Otros">("Todos");
-    const categories = ["Todos", "Paquetes Completos", "Goteros", "Tónicos", "Detox", "Pomadas", "Otros"] as const;
+    const [filter, setFilter] = useState<"Todos" | "Paquetes Completos" | "Tinturas" | "Tónicos" | "Detox" | "Pomadas" | "Otros">("Todos");
+    const categories = ["Todos", "Paquetes Completos", "Tinturas", "Tónicos", "Detox", "Pomadas", "Otros"] as const;
 
     const filtered = filter === "Todos" ? products : products.filter((p) => p.category === filter);
 
@@ -26,9 +26,10 @@ export default function ProductosPageClient() {
                         onChange={(_, v) => v && setFilter(v)}
                         color="primary"
                         size="small"
+                        sx={{flexWrap: "wrap", justifyContent: "center"}}
                     >
                         {categories.map((c) => (
-                            <ToggleButton key={c} value={c}>
+                            <ToggleButton key={c} value={c} sx={{m: 0.5}}>
                                 {c}
                             </ToggleButton>
                         ))}

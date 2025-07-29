@@ -1,5 +1,25 @@
+import type {Metadata} from "next"
+
 import PostCard from "@/components/blog/post-card";
 import PageLayout from "@/components/page-layout"
+
+export const metadata: Metadata = {
+    title: "Blog de Medicina Tradicional",
+    description: "Explora nuestros artículos sobre medicina tradicional, consejos de salud natural y las últimas investigaciones en terapias alternativas.",
+    keywords: ["blog medicina tradicional", "artículos salud natural", "terapias alternativas", "consejos bienestar"],
+    alternates: {
+        canonical: "/blog",
+    },
+    openGraph: {
+        title: "Blog de Medicina Tradicional | Gaia Medico Tradicional",
+        description: "Explora nuestros artículos sobre medicina tradicional, consejos de salud natural y las últimas investigaciones en terapias alternativas.",
+        url: "/blog",
+    },
+    twitter: {
+        title: "Blog de Medicina Tradicional | Gaia Medico Tradicional",
+        description: "Explora nuestros artículos sobre medicina tradicional, consejos de salud natural y las últimas investigaciones en terapias alternativas.",
+    },
+}
 
 
 const categories = ["Todos", "Acupuntura", "Nutrición", "Terapia Neural"]

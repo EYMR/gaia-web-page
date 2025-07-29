@@ -1,3 +1,5 @@
+import type {Metadata} from "next";
+
 import {Calendar, CreditCard, Heart, HelpCircle, Info, MessageCircle, Package, Shield} from "lucide-react"
 import Link from "next/link"
 
@@ -5,8 +7,22 @@ import PageLayout from "@/components/page-layout"
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion"
 import {faqData} from "@/data/faq";
 
-export const metadata = {
-    title: "FAQ · Aviso de Privacidad",
+export const metadata: Metadata = {
+    title: "Preguntas Frecuentes",
+    description: "Respuestas a las preguntas más frecuentes sobre medicina tradicional, tratamientos naturales y terapias holísticas en Gaia.",
+    keywords: ["FAQ medicina tradicional", "preguntas frecuentes", "dudas tratamientos naturales", "aviso de privacidad"],
+    alternates: {
+        canonical: "/faq",
+    },
+    openGraph: {
+        title: "Preguntas Frecuentes | Gaia Medico Tradicional",
+        description: "Respuestas a las preguntas más frecuentes sobre medicina tradicional, tratamientos naturales y terapias holísticas en Gaia.",
+        url: "/faq",
+    },
+    twitter: {
+        title: "Preguntas Frecuentes | Gaia Medico Tradicional",
+        description: "Respuestas a las preguntas más frecuentes sobre medicina tradicional, tratamientos naturales y terapias holísticas en Gaia.",
+    },
 }
 
 const faqCategories = [
