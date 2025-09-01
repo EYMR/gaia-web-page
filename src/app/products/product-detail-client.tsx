@@ -211,7 +211,7 @@ export default function ProductDetailClient({product}: { product: Product }) {
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2"
                                             >
-                                                <MessageCircle className="w-5 h-5"/>
+                                                <MessageCircle className="w-5 h-5 mt-3 mb-3"/>
                                                 Consultar por WhatsApp
                                             </a>
                                         </Button>
