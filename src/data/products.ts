@@ -2,10 +2,12 @@ export type Product = {
     id: string;
     name: string;
     category: "Paquetes Completos" | "Tinturas" | "Tónicos" | "Detox" | "Pomadas" | "Otros";
+    description?: string;
     size: string;       // Ej. "55 ml"   "240 ml"
     price: number;      // MXN
     sendable: boolean;  // Envío paquetería
     image?: string; // URL de la imagen (opcional)
+    slug?: string;
 };
 
 export const products: Product[] = [
@@ -15,6 +17,7 @@ export const products: Product[] = [
         id: "pac-ntv",
         name: "Paquete Nutritivo",
         category: "Paquetes Completos",
+        description: "Paquete Nutritivo",
         size: "1 mes",
         price: 2900,
         sendable: true,
@@ -22,7 +25,7 @@ export const products: Product[] = [
     },
 
 
-{
+    {
         id: "pac-cmp",
         name: "Paquete Completo",
         category: "Paquetes Completos",

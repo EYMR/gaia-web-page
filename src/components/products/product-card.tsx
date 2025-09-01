@@ -3,30 +3,36 @@
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 import {Product} from "@/data/products";
 
+function slugify(input: string) {
+    return input
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "");
+}
+
 export default function ProductCard({p}: { p: Product }) {
-    const waMsg = encodeURIComponent(`Hola, me interesa el producto: ${p.name} (${p.size}) · $${p.price}`);
-    const waLink = `https://wa.me/524422799328?text=${waMsg}`;
+    const slug = p.slug ?? slugify(p.name || p.id);
+    const detailsHref = `/products/${slug}`;
 
     return (
         <Card elevation={1} className="flex flex-col">
-            {p.image ? (
-                <div className="relative h-36">
-                    <Image
-                        src={p.image}
-                        alt={p.name}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-            ) : (
-                <div className="h-36 bg-green-50 flex items-center justify-center text-green-600">
-                    <span className="text-lg font-semibold">{p.category}</span>
-                </div>
-            )}
-
+            {/* Imagen clicable */}
+            <Link href={detailsHref}
+                  className="relative h-36 block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 rounded-t-md">
+                {p.image ? (
+                    <Image src={p.image} alt={p.name} fill className="object-cover"/>
+                ) : (
+                    <div className="h-36 bg-green-50 flex items-center justify-center text-green-600">
+                        <span className="text-lg font-semibold">{p.category}</span>
+                    </div>
+                )}
+            </Link>
 
             <CardContent className="flex-1">
                 <Typography variant="h6" fontWeight={600}>
@@ -50,11 +56,11 @@ export default function ProductCard({p}: { p: Product }) {
                     fullWidth
                     variant="contained"
                     color="primary"
-                    href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    component={Link}
+                    href={detailsHref}
+                    aria-label={`Ver detalles de ${p.name}`}
                 >
-                    Pedir por WhatsApp
+                    Detalles
                 </Button>
             </CardActions>
         </Card>

@@ -8,7 +8,9 @@ import ProductCard from "@/components/products/product-card";
 import {products} from "@/data/products";
 
 export default function ProductosPageClient() {
-    const [filter, setFilter] = useState<"Todos" | "Paquetes Completos" | "Tinturas" | "Tónicos" | "Detox" | "Pomadas" | "Otros">("Todos");
+    const [filter, setFilter] = useState<
+        "Todos" | "Paquetes Completos" | "Tinturas" | "Tónicos" | "Detox" | "Pomadas" | "Otros"
+    >("Todos");
     const categories = ["Todos", "Paquetes Completos", "Tinturas", "Tónicos", "Detox", "Pomadas", "Otros"] as const;
 
     const filtered = filter === "Todos" ? products : products.filter((p) => p.category === filter);
@@ -16,8 +18,6 @@ export default function ProductosPageClient() {
     return (
         <PageLayout title="Catálogo de Productos">
             <Container maxWidth="lg" className="py-20">
-
-
                 {/* Filtros */}
                 <div className="flex justify-center mb-10">
                     <ToggleButtonGroup
