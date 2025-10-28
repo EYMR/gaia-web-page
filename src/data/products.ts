@@ -77,7 +77,7 @@ export const products: Product[] = [
         name: "Lechero Africano",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 850,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -86,7 +86,7 @@ export const products: Product[] = [
         name: "Kalanchoe",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 250,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -95,7 +95,7 @@ export const products: Product[] = [
         name: "Detox",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 250,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -104,7 +104,7 @@ export const products: Product[] = [
         name: "Dolor",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 250,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -113,7 +113,7 @@ export const products: Product[] = [
         name: "Sistema Nervioso",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 250,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -122,7 +122,7 @@ export const products: Product[] = [
         name: "Uña de Gato",
         category: "Tinturas",
         size: "55 ml",
-        price: 180,
+        price: 250,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
@@ -290,7 +290,7 @@ export const products: Product[] = [
         name: "Shampoo",
         category: "Otros",
         size: "500 ml",
-        price: 150,
+        price: 450,
         sendable: true,
         image: "https://storage.googleapis.com/gaia-web-a0afb.firebasestorage.app/public%2Flogo.jpg"
     },
