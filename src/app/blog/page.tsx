@@ -1,6 +1,12 @@
+import {Metadata} from "next";
+
 import PostCard from "@/components/blog/post-card";
 import PageLayout from "@/components/page-layout"
 
+export const metadata: Metadata = {
+    title: "Blog · Medicina Tradicional",
+    description: "Artículos sobre medicina tradicional, consejos de salud natural y las últimas investigaciones en terapias alternativas.",
+}
 
 const categories = ["Todos", "Acupuntura", "Nutrición", "Terapia Neural"]
 

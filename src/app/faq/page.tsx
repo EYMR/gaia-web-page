@@ -7,6 +7,7 @@ import {faqData} from "@/data/faq";
 
 export const metadata = {
     title: "FAQ · Aviso de Privacidad",
+    description: "Respuestas a preguntas frecuentes sobre nuestros servicios, tratamientos, productos y políticas de privacidad.",
 }
 
 const faqCategories = [
