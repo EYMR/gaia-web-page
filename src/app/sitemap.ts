@@ -4,6 +4,8 @@ import {blogPosts} from "@/data/posts";
 
 const BASE_URL = "https://www.gaia-web-services.com.mx";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes: MetadataRoute.Sitemap = [
         {
