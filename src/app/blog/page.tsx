@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     },
 }
 
-
 const categories = ["Todos", "Acupuntura", "Nutrición", "Terapia Neural"]
 
 export default function Blog() {

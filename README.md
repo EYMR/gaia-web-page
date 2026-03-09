@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌿 Gaia Médico Tradicional
 
-## Getting Started
+Sitio web oficial de **Gaia Médico Tradicional** — Medicina tradicional y holística para tu bienestar integral.
 
-First, run the development server:
+🌐 <a href="https://www.gaia-web-services.com.mx">www.gaia-web-services.com.mx</a>
+
+## Tecnologías
+
+- **Framework**: <a href="https://nextjs.org/">Next.js 15</a> con App Router
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS v4 + Material UI (MUI)
+- **Componentes**: Radix UI + shadcn/ui
+- **Blog**: MDX con next-mdx-remote
+- **Backend**: Firebase (Storage + Admin)
+- **Deploy**: GitHub Pages con GitHub Actions
+
+## Desarrollo local
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build para producción
+npm run build
+
+# Linting
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/                 # Rutas y páginas (App Router)
+│   ├── about/           # Acerca de nosotros
+│   ├── blog/            # Blog con MDX
+│   ├── calendar/        # Agenda de consultas
+│   ├── contact/         # Página de contacto
+│   ├── faq/             # Preguntas frecuentes y legal
+│   ├── products/        # Productos naturales
+│   ├── services/        # Servicios ofrecidos
+│   ├── testimonials/    # Testimonios de pacientes
+│   └── treatments/      # Tratamientos disponibles
+├── components/          # Componentes reutilizables
+├── data/                # Datos estáticos
+├── hooks/               # Custom hooks
+└── lib/                 # Utilidades y configuración
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+El sitio se despliega automáticamente a GitHub Pages mediante GitHub Actions al hacer push a `main`.
 
-To learn more about Next.js, take a look at the following resources:
+### Configuración DNS (GoDaddy)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para el dominio `gaia-web-services.com.mx`, configura estos registros:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Tipo | Nombre | Valor |
+|------|--------|-------|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | EYMR.github.io |
 
-## Deploy on Vercel
+## Licencia
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Todos los derechos reservados © Gaia Médico Tradicional

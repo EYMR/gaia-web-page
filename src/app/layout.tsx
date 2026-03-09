@@ -4,6 +4,7 @@ import type {ReactNode} from "react";
 import {Geist, Geist_Mono} from "next/font/google";
 
 import "./globals.css";
+import StructuredData from "@/components/structured-data";
 import ThemeRegistry from "@/components/theme-registry";
 
 /* Fonts */
@@ -86,6 +87,7 @@ export default function RootLayout({children}: { children: ReactNode }) {
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
         >
+        <StructuredData/>
         <ThemeRegistry>{children}</ThemeRegistry>
         </body>
         </html>

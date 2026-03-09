@@ -28,8 +28,7 @@ export const metadata: Metadata = {
     twitter: {
         title: "Tratamientos | Gaia Médico Tradicional",
         description: "Descubre nuestros tratamientos de medicina tradicional para diversas condiciones crónicas y agudas. Personalizados para cada paciente.",
-    }
-
+    },
 }
 
 export default function TreatmentsPage() {
