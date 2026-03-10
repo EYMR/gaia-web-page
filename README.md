@@ -54,18 +54,6 @@ src/
 
 El sitio se despliega automáticamente a GitHub Pages mediante GitHub Actions al hacer push a `main`.
 
-### Configuración DNS (GoDaddy)
-
-Para el dominio `gaia-web-services.com.mx`, configura estos registros:
-
-| Tipo | Nombre | Valor |
-|------|--------|-------|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | EYMR.github.io |
-
 ## Licencia
 
 Todos los derechos reservados © Gaia Médico Tradicional
