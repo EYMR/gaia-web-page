@@ -24,13 +24,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://www.gaiamedicotradicional.com.mx"),
+    metadataBase: new URL("https://www.gaia-web-services.com.mx"),
     title: {
         template: "%s | Gaia Medico Tradicional",
         default: "Gaia Medico Tradicional",
     },
     description: "Medicina tradicional y holística para tu bienestar integral. Tratamientos naturales respaldados por siglos de sabiduría ancestral.",
-    keywords: ["medicina tradicional", "medicina holística", "tratamientos naturales", "bienestar integral", "Gaia"],
+    keywords: [
+        "medicina tradicional",
+        "medicina holística",
+        "tratamientos naturales",
+        "bienestar integral",
+        "Gaia",
+        "medicina tradicional Querétaro",
+        "acupuntura Corregidora",
+        "herbolaria mexicana",
+        "remedios naturales",
+        "tinturas medicinales",
+        "consulta medicina alternativa",
+    ],
     authors: [{name: "Gaia Medico Tradicional"}],
     creator: "Gaia Medico Tradicional",
     publisher: "Gaia Medico Tradicional",
@@ -49,6 +61,9 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "/",
+        languages: {
+            "es-MX": "/",
+        },
     },
     openGraph: {
         type: "website",

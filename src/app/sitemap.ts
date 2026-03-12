@@ -1,8 +1,10 @@
 import type {MetadataRoute} from "next";
 
 import {blogPosts} from "@/data/posts";
+import {products} from "@/data/products";
+import {SITE_URL} from "@/lib/constants";
 
-const BASE_URL = "https://www.gaia-web-services.com.mx";
+const BASE_URL = SITE_URL;
 
 export const dynamic = "force-static";
 
@@ -77,5 +79,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
-    return [...staticRoutes, ...blogRoutes];
+    const slugify = (input: string) =>
+        input
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)+/g, "");
+
+    const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
+        url: `${BASE_URL}/products/${p.slug ?? slugify(p.name || String(p.id))}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+    }));
+
+    return [...staticRoutes, ...blogRoutes, ...productRoutes];
 }

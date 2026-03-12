@@ -18,8 +18,13 @@ export const metadata: Metadata = {
         "lechero",
         "neem",
         "uña de gato",
-        "detox"
+        "detox",
+        "tratamientos naturales Querétaro",
+        "medicina alternativa Corregidora",
     ],
+    alternates: {
+        canonical: "/treatments",
+    },
     openGraph: {
         title: "Tratamientos | Gaia Médico Tradicional",
         description: "Descubre nuestros tratamientos de medicina tradicional para diversas condiciones crónicas y agudas. Personalizados para cada paciente.",

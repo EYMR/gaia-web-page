@@ -35,10 +35,28 @@ const faqCategories = [
     {id: "general", name: "General", icon: Info},
 ]
 
+/* ── FAQPage JSON-LD ─────────────────────────────────────────── */
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+        },
+    })),
+};
 
 export default function FaqPage() {
     return (
-        <PageLayout title="Preguntas Frecuentes & Aviso Legal">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd)}}
+            />
+            <PageLayout title="Preguntas Frecuentes & Aviso Legal">
             <div className="max-w-6xl mx-auto">
                 {/* Hero Section */}
                 <section className="mb-12">
@@ -191,6 +209,7 @@ export default function FaqPage() {
                     </div>
                 </section>
             </div>
-        </PageLayout>
+            </PageLayout>
+        </>
     )
 }
