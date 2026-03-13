@@ -16,7 +16,7 @@ export default function ProductosPageClient() {
     const filtered = filter === "Todos" ? products : products.filter((p) => p.category === filter);
 
     return (
-        <PageLayout title="Catálogo de Productos">
+        <PageLayout title="Catálogo de Productos" breadcrumbs={[{label: "Productos"}]}>
             <Container maxWidth="lg" className="py-20">
                 {/* Filtros */}
                 <div className="flex justify-center mb-10">

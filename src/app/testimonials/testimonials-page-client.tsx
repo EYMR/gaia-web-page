@@ -78,7 +78,7 @@ export default function TestimonialsPageClient() {
     }
 
     return (
-        <PageLayout title="Testimonios de Nuestros Pacientes">
+        <PageLayout title="Testimonios de Nuestros Pacientes" breadcrumbs={[{label: "Testimonios"}]}>
             <div className="max-w-7xl mx-auto">
                 {/* Hero Section */}
                 <section className="mb-12">

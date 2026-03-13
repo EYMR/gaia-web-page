@@ -25,7 +25,7 @@ const categories = ["Todos", "Acupuntura", "Nutrición", "Terapia Neural"]
 
 export default function Blog() {
     return (
-        <PageLayout title="Blog de Medicina Tradicional">
+        <PageLayout title="Blog de Medicina Tradicional" breadcrumbs={[{label: "Blog"}]}>
             <div className="max-w-6xl mx-auto">
                 {/* Introduction */}
                 <section className="mb-12">

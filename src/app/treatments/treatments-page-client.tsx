@@ -6,7 +6,7 @@ import {treatments} from "@/data/treatments";
 
 export default function TreatmentsPageClient() {
     return (
-        <PageLayout title="Tratamientos Especializados">
+        <PageLayout title="Tratamientos Especializados" breadcrumbs={[{label: "Tratamientos"}]}>
             <div className="max-w-6xl mx-auto">
                 {/* Introduction */}
                 <section className="mb-12">

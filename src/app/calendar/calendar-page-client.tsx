@@ -73,7 +73,7 @@ export default function AgendaPageClient() {
     const selectedService = services.find((s) => s.id === form.servicio);
 
     return (
-        <PageLayout>
+        <PageLayout breadcrumbs={[{label: "Consultas"}]}>
             <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4">
                 <div className="max-w-2xl mx-auto">
                     {/* Header */}

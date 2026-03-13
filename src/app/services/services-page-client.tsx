@@ -14,7 +14,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function ServicesPageClient() {
     return (
-        <PageLayout title="Nuestros Servicios">
+        <PageLayout title="Nuestros Servicios" breadcrumbs={[{label: "Servicios"}]}>
             <div className="max-w-6xl mx-auto">
                 {/* INTRO */}
                 <section className="mb-12">

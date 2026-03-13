@@ -4,9 +4,12 @@ export type PostMeta = {
     title: string;
     author?: string;
     date: string;
+    dateISO: string;        // ISO 8601 para structured data
     category: string;
     excerpt: string;
-    readTime: string
+    readTime: string;
+    image?: string;         // URL imagen destacada (OG / Article schema)
+    keywords?: string[];    // keywords target del post
 };
 
 export const blogPosts: PostMeta[] = [
@@ -17,9 +20,11 @@ export const blogPosts: PostMeta[] = [
             "Descubre cómo las plantas medicinales pueden ayudar a reducir los niveles de ansiedad de forma natural y sin efectos secundarios.",
         author: "Dra. María Elena Gaia",
         date: "15 de Enero, 2024",
+        dateISO: "2024-01-15",
         category: "Fitoterapia",
         readTime: "5 min lectura",
         slug: "beneficios-fitoterapia-ansiedad",
+        keywords: ["fitoterapia ansiedad", "plantas medicinales ansiedad", "remedios naturales estrés", "valeriana", "ashwagandha"],
     },
     {
         id: 2,
@@ -28,9 +33,11 @@ export const blogPosts: PostMeta[] = [
             "Aprende sobre los tres doshas (Vata, Pitta, Kapha) y cómo mantenerlos en equilibrio para optimizar tu bienestar.",
         author: "Dra. María Elena Gaia",
         date: "8 de Enero, 2024",
+        dateISO: "2024-01-08",
         category: "Ayurveda",
         readTime: "7 min lectura",
         slug: "medicina-ayurvedica-doshas",
+        keywords: ["medicina ayurvédica", "doshas", "vata pitta kapha", "equilibrio energético", "ayurveda"],
     },
     {
         id: 3,
@@ -39,9 +46,11 @@ export const blogPosts: PostMeta[] = [
             "Explora los principios fundamentales de la acupuntura y cómo esta antigua práctica puede transformar tu salud.",
         author: "Dra. María Elena Gaia",
         date: "2 de Enero, 2024",
+        dateISO: "2024-01-02",
         category: "Acupuntura",
         readTime: "6 min lectura",
         slug: "acupuntura-filosofia-sanacion",
+        keywords: ["acupuntura beneficios", "acupuntura Querétaro", "medicina china", "meridianos", "acupuntura dolor"],
     },
     {
         id: 4,
@@ -50,10 +59,11 @@ export const blogPosts: PostMeta[] = [
             "Descubre cómo los alimentos pueden ser tu medicina y aprende a crear una dieta que nutra tu cuerpo y alma.",
         author: "Dra. María Elena Gaia",
         date: "28 de Diciembre, 2023",
+        dateISO: "2023-12-28",
         category: "Nutrición",
         readTime: "8 min lectura",
         slug: "alimentacion-consciente-medicina-tradicional",
-
+        keywords: ["alimentación consciente", "dieta natural", "nutrición holística", "alimentos medicinales", "medicina tradicional nutrición"],
     },
     {
         id: 5,
@@ -62,9 +72,11 @@ export const blogPosts: PostMeta[] = [
             "Conoce cómo la terapia neural puede ayudar a resolver traumas físicos y emocionales almacenados en el sistema nervioso.",
         author: "Dra. María Elena Gaia",
         date: "20 de Diciembre, 2023",
+        dateISO: "2023-12-20",
         category: "Terapia Neural",
         readTime: "6 min lectura",
         slug: "terapia-neural-memorias-cuerpo",
+        keywords: ["terapia neural", "dolor crónico", "sistema nervioso", "trauma corporal", "procaína"],
     },
     {
         id: 6,
@@ -73,8 +85,10 @@ export const blogPosts: PostMeta[] = [
             "Un recorrido por las plantas medicinales más importantes de México y sus usos tradicionales en la sanación.",
         author: "Dra. María Elena Gaia",
         date: "15 de Diciembre, 2023",
+        dateISO: "2023-12-15",
         category: "Fitoterapia",
         readTime: "9 min lectura",
         slug: "plantas-medicinales-mexicanas-tradicion",
+        keywords: ["plantas medicinales México", "herbolaria mexicana", "remedios naturales", "medicina prehispánica", "epazote", "árnica"],
     },
 ];

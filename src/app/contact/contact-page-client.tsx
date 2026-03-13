@@ -53,7 +53,7 @@ export default function ContactPageClient() {
     };
 
     return (
-        <PageLayout title="Contacto">
+        <PageLayout title="Contacto" breadcrumbs={[{label: "Contacto"}]}>
             <div className="max-w-6xl mx-auto">
                 {/* Contact Information */}
                 <section className="mb-12">

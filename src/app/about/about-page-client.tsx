@@ -4,7 +4,7 @@ import PageLayout from "@/components/page-layout"
 
 export default function AboutPageClient() {
     return (
-        <PageLayout title="Acerca de Nosotros">
+        <PageLayout title="Acerca de Nosotros" breadcrumbs={[{label: "Acerca de"}]}>
             <div className="max-w-4xl mx-auto">
                 {/* Mission Section */}
                 <section className="mb-12">

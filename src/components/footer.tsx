@@ -10,12 +10,17 @@ export default function Footer() {
                     11:00-19:00
                 </Typography>
 
-                <Box className="flex justify-center gap-6">
+                <Box className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                     {[
+                        {href: "/about", label: "Acerca de"},
+                        {href: "/services", label: "Servicios"},
                         {href: "/products", label: "Productos"},
+                        {href: "/treatments", label: "Tratamientos"},
+                        {href: "/blog", label: "Blog"},
+                        {href: "/testimonials", label: "Testimonios"},
                         {href: "/calendar", label: "Consultas"},
                         {href: "/contact", label: "Contacto"},
-                        {href: "/faq", label: "Aviso de Privacidad"}
+                        {href: "/faq", label: "Aviso de Privacidad"},
                     ].map(({href, label}) => (
                         <MuiLink
                             key={href}

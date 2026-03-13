@@ -56,7 +56,7 @@ export default function FaqPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd)}}
             />
-            <PageLayout title="Preguntas Frecuentes & Aviso Legal">
+            <PageLayout title="Preguntas Frecuentes & Aviso Legal" breadcrumbs={[{label: "Preguntas Frecuentes"}]}>
             <div className="max-w-6xl mx-auto">
                 {/* Hero Section */}
                 <section className="mb-12">
